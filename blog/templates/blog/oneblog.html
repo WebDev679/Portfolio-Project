@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Jekyll v3.8.6">
-  <title>WebDev679</title>
+  <title>Blog Page</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
 
@@ -52,45 +52,36 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link" href="#">Twitter</a>
           <a class="nav-item nav-link" href="#">Projects</a>
-          <a class="nav-item nav-link" href="{% url 'allblogs' %}">Blog</a>
+          <a class="nav-item nav-link active" href="{% url 'allblogs' %}">Blog</a>
         </div>
       </div>
     </nav>
   </header>
-
-  <main role="main" >
-
-    <section class="jumbotron text-center">
-      <div class="container">
-        <h1>Arnav Chaudhry, WebDev679</h1>
-        <p class="lead text-muted">My name is Arnav Chaudhry aka WebDev679, I am a developer and you can find all my projects and my blog here. </p>
-        <p>
-          <a href="mailto:arnavpchaudhry3@gmail.com" class="btn btn-primary my-2">Email Me</a>
-        </p>
-      </div>
-    </section>
-
-    <div class="album py-5 bg-light">
-      <div class="container">
-        <div class="row">
-          {% for project in projects.all %}
-          <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
-              <img class="bd-placeholder-img card-img-top" src = "{{project.image.url}}" height = "200px" />
-              <div class="card-body">
-                <p class="card-text">{{ project.title }}</p>
-              </div>
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
+<br>
+<br>
+<br>
+  <main role="main">
+    <div class="jumbotron">
+    <h1 class = "text-center pt-10">{{blog.title}}</h1>
+  </div>
+    <br>
+    <br>
+    <br>
+    <div class="bg-light">
+    <img src="{{blog.image.url}}" height = 400 width = "500" class="bg-light float-left pr-3 pb-3 pt-3">
+    <p class="text-right">{{blog.body}}</p>
     </div>
+
+    <div class="bg-secondary">
+      <p> Written on {{blog.pub_date}}</p>
+    </div>
+
 
   </main>
 
-  <footer class="text-muted ">
+  <footer class="text-muted">
     <div class="container text-center">
       <p>© Arnav Chaudhry {% now "Y" %}</p>
   </footer>
