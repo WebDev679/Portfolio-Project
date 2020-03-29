@@ -1,4 +1,4 @@
     static/* linguist-vendored
-    projects/templates/* linguist-vendored
-    blog/templates/* linguist-vendored
+    projects/templates/projects/* linguist-vendored
+    blog/templates/blog/* linguist-vendored
     
